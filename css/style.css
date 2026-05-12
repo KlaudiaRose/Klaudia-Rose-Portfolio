@@ -1,0 +1,418 @@
+
+html, body {
+  overflow-x: hidden;
+}
+
+.site-wrapper {
+  max-width: 1100px;   /* controls how wide content can get */
+  margin: 0 auto;      /* auto = big margins on desktop */
+  padding: 0 24px;     /* small padding on mobile */
+}
+
+body {
+  margin: 0;
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  body {
+    margin-left: 350px;
+    margin-right: 30px;
+  }
+}
+
+/* Phone */
+@media (max-width: 600px) {
+  body {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+
+body {
+  font-family: system-ui, sans-serif;
+  background: #f2e8bf;
+  color: #111;
+}
+
+
+
+.header {
+  margin-top: 130px;
+  padding-right: 100px;  /* shift nav inward */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-left: 24px;
+  margin-right: 24px;
+}
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 40px;
+    padding-right: 0;
+    gap: 16px;
+  }
+
+  .nav {
+    gap: 16px;
+  }
+
+  .logo {
+    width: 140px;
+  }
+}
+
+
+.site-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.logo {
+  display: block;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start; /* ensures nav links align at top */
+}
+
+.nav a {
+  text-decoration: none;
+  color: #111;
+}
+
+.intro {
+  font-size:large;
+  padding: 20px 24px;
+  max-width: 700px;
+}
+
+
+.works {
+  padding: 80px 50px 140px 25px;
+}
+
+
+.work-subtitle {
+  font-size:small;
+  color:#a9978c;
+}
+
+
+
+
+
+.dark-section {
+  background-color: #2f2a25; /* charcoal/dark brown */
+  color: #f2e8bf;               /* white text */
+  transition: background-color 0.5s, color 0.5s; /* smooth transition */
+}
+
+
+
+.player-bar {
+  padding: 16px;
+}
+
+.player-bar button {
+  font-size: 1.2rem;
+}
+player bar is touch friendly for phones
+
+/* Play icon */
+.play-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: rgb(255, 138, 65);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.video-wrapper:hover .play-icon {
+  opacity: 1;
+}
+
+/* Bottom player bar */
+.player-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #111;
+  color: white;
+  display: none;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 24px;
+}
+
+.player-bar input {
+  flex: 1;
+}
+
+/* Reset default browser slider styling so colours apply */
+#timeline {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent; /* don't show blue default */
+}
+/* === Timeline colour styling === */
+
+/* overall track (empty area) */
+#timeline::-webkit-slider-runnable-track {
+  height: 6px;
+  background: #444; /* empty progress colour */
+  border-radius: 3px;
+}
+
+/* the knob / thumb */
+#timeline::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #ff8a41;   /* ORANGE KNOB COLOUR */
+  border-radius: 50%;
+  margin-top: -5px; /* centers thumb on track */
+  cursor: pointer;
+  border: none; /* remove ugly outline */
+}
+
+/* Firefox compatibility */
+#timeline::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #ff8a41;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+
+#timeline::-moz-range-track {
+  height: 6px;
+  background: #444;
+  border-radius: 3px;
+}
+
+#timeline::-moz-range-progress {
+  height: 6px;
+  background: #ff8a41;
+  border-radius: 3px;
+}
+
+
+
+
+/* Work card grid */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 500px);
+ row-gap: 90px;
+  column-gap: 150px;
+  justify-content: start;
+}
+
+
+
+@media (max-width: 900px) {
+  .work-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+/* Video wrapper initial state */
+.video-wrapper {
+  position: relative;
+  width: 415px;            /* starting width */
+  height: 415px;           /* starting height */
+  background: #000;
+  cursor: pointer;
+  overflow: hidden;
+  transition: width 0.4s ease, height 0.4s ease; /* smooth size animation */
+}
+
+/* Video inside wrapper */
+.video-wrapper video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hover state: enlarge */
+.video-wrapper:hover {
+  width: 390px;             /* enlarged width */
+  height: 390px;            /* enlarged height */
+}
+
+@media (max-width: 768px) {
+  .video-wrapper,
+  .video-wrapper.is-active {
+    width: 100%;
+    max-width: 320px;   /* controls phone size */
+    max-height:320px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+
+/* Play icon stays as before */
+.play-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: rgb(255, 138, 65);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.video-wrapper:hover .play-icon {
+  opacity: 1;
+}
+
+
+
+
+CONTACT PAGE
+
+/* CONTACT PAGE */
+
+.contact-page {
+  background: #f2e8bf;
+}
+
+.contact {
+  padding: 80px 50px 200px;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Titles */
+.page-title {
+  font-size: 2.5rem;
+  letter-spacing: 0.3rem;
+  margin-bottom: 20px;
+}
+
+.contact-subtitle {
+  font-size: 1rem;
+  margin-bottom: 50px;
+  opacity: 0.7;
+}
+
+/* Layout: image + form */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* 1/3 image, 2/3 form */
+  gap: 60px;
+  align-items: start;
+}
+
+.contact-image {
+  min-height: 400px;
+  background-image: url("/images/sunset.JPG");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Form */
+.contact-form {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* Inputs */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 0.9rem;
+  background: none;
+  border: none;
+  border-bottom: 1px solid #999;
+  outline: none;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+/* Button */
+.contact-form button {
+  width: fit-content;
+  padding: 10px 30px;
+  border: 1px solid #000;
+  background: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  letter-spacing: 0.1rem;
+}
+
+.contact-form button:hover {
+  opacity: 0.6;
+}
+
+/* -------- RESPONSIVE -------- */
+
+/* Tablets */
+@media (max-width: 900px) {
+  .contact {
+    padding: 60px 40px 100px;
+  }
+
+  .contact-layout {
+    gap: 40px;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .contact {
+    padding: 40px 20px 80px;
+  }
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-image {
+    display: none;
+  }
+
+  .page-title {
+    font-size: 1.6rem;
+  }
+}
