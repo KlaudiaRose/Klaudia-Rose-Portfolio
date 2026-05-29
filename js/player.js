@@ -9,6 +9,12 @@ document.querySelectorAll(".video-wrapper").forEach(wrapper => {
   const video = wrapper.querySelector("video");
   const src = wrapper.dataset.video;
   video.src = src;
+  video.load();
+
+video.play().then(() => {
+  video.pause();
+  video.currentTime = 0;
+}).catch(() => {});
 
   wrapper.addEventListener("click", () => {
     if (currentVideo && currentVideo !== video) {
