@@ -276,8 +276,9 @@ player bar is touch friendly for phones
 
 Movie Page Only Wrapper:
 
-.video-wrapper-wide {
+.movie-page .video-wrapper {
   width: 600px;
+  height: unset;
   aspect-ratio: 16 / 9;
 }
 
