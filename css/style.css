@@ -297,12 +297,9 @@ player bar is touch friendly for phones
 
 CONTACT PAGE
 
+CONTACT PAGE
+
 /* CONTACT PAGE */
-
-
-/* =========================
-   CONTACT PAGE
-========================= */
 
 .contact-page {
   background: #f2e8bf;
@@ -312,7 +309,14 @@ CONTACT PAGE
   padding: 80px 50px 200px;
 }
 
-/* TITLE */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Titles */
 .page-title {
   font-size: 2.5rem;
   letter-spacing: 0.3rem;
@@ -325,23 +329,22 @@ CONTACT PAGE
   opacity: 0.7;
 }
 
-/* LAYOUT */
+/* Layout: image + form */
 .contact-layout {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 1fr 2fr; /* 1/3 image, 2/3 form */
   gap: 60px;
   align-items: start;
 }
 
-/* IMAGE */
 .contact-image {
-  min-height: 200px;
-  background-image: url("../images/contact-image.JPG");
+  min-height: 400px;
+  background-image: url("/images/sunset.JPG");
   background-size: cover;
   background-position: center;
 }
 
-/* FORM */
+/* Form */
 .contact-form {
   max-width: 500px;
   display: flex;
@@ -349,7 +352,7 @@ CONTACT PAGE
   gap: 25px;
 }
 
-/* INPUTS */
+/* Inputs */
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -361,12 +364,11 @@ CONTACT PAGE
   outline: none;
 }
 
-/* TEXTAREA */
 .contact-form textarea {
   resize: vertical;
 }
 
-/* BUTTON */
+/* Button */
 .contact-form button {
   width: fit-content;
   padding: 10px 30px;
@@ -380,7 +382,6 @@ CONTACT PAGE
 .contact-form button:hover {
   opacity: 0.6;
 }
-
 
 /* -------- RESPONSIVE -------- */
 
@@ -417,6 +418,7 @@ CONTACT PAGE
     font-size: 1.6rem;
   }
 }
+
 
 
 
