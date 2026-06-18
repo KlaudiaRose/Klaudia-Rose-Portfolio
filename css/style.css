@@ -336,7 +336,7 @@ CONTACT PAGE
 }
 
 .contact-image {
-  min-height: 400px;
+  min-height: 200px;
   background-image: url("/images/contact-image.JPG");
   background-size: cover;
   background-position: center;
