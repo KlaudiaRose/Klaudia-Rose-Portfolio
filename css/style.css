@@ -240,18 +240,28 @@ player bar is touch friendly for phones
 
 
 /* Video wrapper initial state */
-.video-wrapper {
+/* Shared settings */
+.video-wrapper-square,
+.video-wrapper-video {
   position: relative;
-  width: 415px;            /* starting width */
-  height: 415px;           /* starting height */
   background: #000;
   cursor: pointer;
   overflow: hidden;
   transition: width 0.4s ease, height 0.4s ease; /* smooth size animation */
 }
 
-/* Video inside wrapper */
-.video-wrapper video {
+.video-wrapper-square {
+  width: 415px;
+  height: 415px;
+}
+
+.video-wrapper-video {
+  width: 600px;
+  aspect-ratio: 16 / 9;
+}
+
+.video-wrapper-square video,
+.video-wrapper-video video {
   width: 100%;
   height: 100%;
   object-fit: cover;
