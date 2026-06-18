@@ -274,6 +274,12 @@ player bar is touch friendly for phones
   }
 }
 
+Movie Page Only Wrapper:
+
+.video-wrapper-wide {
+  width: 600px;
+  aspect-ratio: 16 / 9;
+}
 
 /* Play icon stays as before */
 .play-icon {
