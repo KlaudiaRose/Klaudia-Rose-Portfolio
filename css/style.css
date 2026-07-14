@@ -293,6 +293,13 @@ player bar is touch friendly for phones
 }
 
 
+/*VIDEO PAGE*/
+
+.fullwidth, .fullwidth:hover {
+width: auto;
+height: auto;
+}
+
 
 
 CONTACT PAGE
