@@ -153,6 +153,13 @@ body {
   aspect-ratio: 16 / 9;
 }
 
+/* Disable hover scaling on Movie/Video page */
+.movie-page .video-wrapper:hover {
+  width: 700px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
 
 
 
