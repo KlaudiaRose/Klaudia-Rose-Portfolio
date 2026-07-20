@@ -116,6 +116,44 @@ body {
   object-fit: cover;
 }
 
+.movie-page .work-grid {
+  grid-template-columns: 1fr;
+  justify-content: start;
+}
+
+@media (max-width: 900px) {
+
+  .movie-page .video-wrapper {
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 16 / 9;
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .movie-page .video-wrapper {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+
+  .movie-page .works {
+    padding: 40px 0 100px;
+  }
+
+}
+
+
+/*VIDEO PAGE*/
+.movie-page .fullwidth {
+  width: 700px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+
 
 
 
@@ -304,13 +342,6 @@ player bar is touch friendly for phones
   opacity: 1;
 }
 
-
-/*VIDEO PAGE*/
-
-.fullwidth, .fullwidth:hover {
-width: auto;
-height: auto;
-}
 
 
 
