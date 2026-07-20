@@ -154,6 +154,8 @@ body {
 }
 
 /* Disable hover scaling on Movie/Video page */
+/* MOVIE PAGE - no hover scaling */
+.movie-page .video-wrapper,
 .movie-page .video-wrapper:hover {
   width: 700px;
   height: auto;
