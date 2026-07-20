@@ -104,6 +104,16 @@ body {
 
 /* MOVIE / VIDEO PROJECTS PAGE */
 
+
+/* Disable hover scaling on Movie/Video page */
+/* MOVIE PAGE - no hover scaling */
+.movie-page .video-wrapper,
+.movie-page .video-wrapper:hover {
+  width: 700px;
+  height: auto;
+  aspect-ratio: 16 / 9;
+}
+
 .movie-page .video-wrapper {
   width: 700px;
   height: auto;
@@ -153,14 +163,6 @@ body {
   aspect-ratio: 16 / 9;
 }
 
-/* Disable hover scaling on Movie/Video page */
-/* MOVIE PAGE - no hover scaling */
-.movie-page .video-wrapper,
-.movie-page .video-wrapper:hover {
-  width: 700px;
-  height: auto;
-  aspect-ratio: 16 / 9;
-}
 
 
 
