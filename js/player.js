@@ -98,9 +98,9 @@ if (worksSection) {
 
 window.addEventListener('scroll', () => {
 
-  const worksBottom = worksSection.getBoundingClientRect().bottom;
+  const worksTop = worksSection.getBoundingClientRect().top;
 
-  if (worksBottom > window.innerHeight / 2) {
+  if (worksTop < window.innerHeight / 2) {
 
     if (document.body.classList.contains("electronic-page")) {
 
