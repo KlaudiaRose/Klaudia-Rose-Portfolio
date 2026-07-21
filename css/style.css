@@ -586,16 +586,6 @@ body {
 }
 
 
-/*NAV BAR BACKGROUND COLOUR*/
-.nav {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start;
-
-  background: white;
-  padding: 10px 18px;
-  border-radius: 4px;
-}
 
 
 
