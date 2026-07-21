@@ -570,22 +570,6 @@ body {
   padding: 0 24px;
 }
 
-.logo {
-  display: block;
-}
-
-.nav {
-  display: flex;
-  gap: 24px;
-  align-items: flex-start; /* ensures nav links align at top */
-}
-
-.nav a {
-  text-decoration: none;
-  color: #111;
-}
-
-
 
 
 
