@@ -80,9 +80,8 @@ body {
   gap: 15px;
   align-items: flex-start;
 
-  background-color: rgba(242, 232, 191, 0.75);
-  padding: 10px 18px;
-  border-radius: 4px;
+  background-color: rgba(242, 232, 191, 0.60);
+  padding: 8px 18px;
 }
 
 
@@ -986,8 +985,3 @@ body.movie-page:not(.dark-section) {
     font-size: 1.6rem;
   }
 }
-
-
-
-
-
