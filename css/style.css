@@ -172,7 +172,7 @@ body {
 
 /*DARK SECTION*/
 
-body.dark-section {
+body.projects-page.dark-section {
   background-color: #2f2a25;
   color: #f2e8bf;
 }
