@@ -92,6 +92,7 @@ playPause.addEventListener("click", () => {
   }
 
 });
+
 const worksSection = document.getElementById('works');
 
 if (worksSection) {
@@ -102,7 +103,10 @@ window.addEventListener('scroll', () => {
 
   if (worksTop < window.innerHeight / 2) {
 
-    if (document.body.classList.contains("electronic-page")) {
+    if (
+      document.body.classList.contains("projects-page") &&
+      document.title.includes("Electronic")
+    ) {
 
       document.body.classList.add("electronic-section");
 
