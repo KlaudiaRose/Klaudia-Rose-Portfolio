@@ -92,6 +92,7 @@ playPause.addEventListener("click", () => {
   }
 
 });
+
 const worksSection = document.getElementById('works');
 
 window.addEventListener('scroll', () => {
@@ -100,26 +101,23 @@ window.addEventListener('scroll', () => {
 
   if (worksTop < window.innerHeight / 2) {
 
-    if (
-      document.body.classList.contains("projects-page") &&
-      document.title.includes("Electronic")
-    ) {
+    if (worksTop < window.innerHeight / 2) {
 
-      document.body.classList.add("electronic-section");
-      document.body.classList.remove("dark-section");
+  if (document.body.classList.contains("projects-page") &&
+      document.title.includes("Electronic")) {
 
-    } else {
-
-      document.body.classList.add("dark-section");
-      document.body.classList.remove("electronic-section");
-
-    }
+    document.body.classList.add("electronic-section");
 
   } else {
 
-    document.body.classList.remove("dark-section");
-    document.body.classList.remove("electronic-section");
+    document.body.classList.add("dark-section");
 
   }
 
+} else {
+
+  document.body.classList.remove("dark-section");
+  document.body.classList.remove("electronic-section");
+
+}
 });
