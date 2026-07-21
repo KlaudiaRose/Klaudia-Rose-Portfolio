@@ -184,6 +184,14 @@ body.electronic-section {
   color: #f2e8bf;
 }
 
+.movie-page.dark-section {
+    background-color: #2f2a25;
+}
+
+.Projects-page.dark-section {
+    background-color: #15243b;
+}
+
 
 
 /*PLAYER BAR*/
