@@ -172,10 +172,7 @@ body.dark-section {
 }
 body {
   transition: background-color 0.5s ease, color 0.5s ease;
-}
-.movie-page {
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
+
 
 
 /* DARK SECTION - SYNTH ELECTRONIC PAGE*/
