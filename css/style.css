@@ -195,7 +195,8 @@ body.electronic-section {
 .player-bar button {
   font-size: 1.2rem;
 }
-player bar is touch friendly for phones
+
+/*player bar is touch friendly for phones*/
 
 /* Play icon */
 .play-icon {
@@ -367,10 +368,6 @@ player bar is touch friendly for phones
 
 
 
-CONTACT PAGE
-
-CONTACT PAGE
-
 /* CONTACT PAGE */
 
 .contact-page {
@@ -495,7 +492,8 @@ CONTACT PAGE
 
 
 
-adding some colour font on top
+/*adding some colour font on top*/
+
 body::before {
   content: "";
 
