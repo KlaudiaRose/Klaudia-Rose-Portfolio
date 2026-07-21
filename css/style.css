@@ -192,6 +192,19 @@ body.electronic-section {
     background-color: #15243b;
 }
 
+/* RESET PAGE COLOURS */
+
+.Projects-page {
+  background-color: #f2e8bf;
+  color: #111;
+}
+
+.movie-page {
+  background-color: #f2e8bf;
+  color: #111;
+}
+
+
 
 
 /*PLAYER BAR*/
