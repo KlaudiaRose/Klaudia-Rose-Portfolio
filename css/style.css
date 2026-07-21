@@ -84,6 +84,10 @@ body {
   border-radius: 4px;
 }
 
+.nav {
+  background: red;
+}
+
 .nav a {
   text-decoration: none;
   color: #111;
