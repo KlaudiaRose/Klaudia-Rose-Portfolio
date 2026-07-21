@@ -498,5 +498,23 @@ body.electronic-section {
 
 
 
+/*adding some colour font on top*/
+
+body::before {
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 9998;
+
+  background: rgba(177, 57, 24, 0.342);
+
+  mix-blend-mode: multiply;
+}
+
+
 
 
