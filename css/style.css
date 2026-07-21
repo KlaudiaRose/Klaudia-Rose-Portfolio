@@ -500,21 +500,31 @@ body.electronic-section {
 
 /*adding some colour font on top*/
 
-body::before {
+
+.site-wrapper > * {
+  position: relative;
+  z-index: 1;
+}
+
+.site-wrapper::before {
   content: "";
 
-  position: fixed;
-  inset: 0;
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+
+  height: 100%;
 
   pointer-events: none;
-
-  z-index: 9998;
 
   background: rgba(177, 57, 24, 0.342);
 
   mix-blend-mode: multiply;
-}
 
+  z-index: 0;
+}
 
 
 
