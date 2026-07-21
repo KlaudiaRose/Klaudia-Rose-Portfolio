@@ -53,6 +53,7 @@ body {
     padding-right: 0;
     gap: 16px;
   }
+}
 
   .nav {
     gap: 16px;
@@ -84,9 +85,6 @@ body {
   border-radius: 4px;
 }
 
-.nav {
-  background: #f2e8bf;
-}
 
 .nav a {
   text-decoration: none;
