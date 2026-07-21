@@ -95,29 +95,34 @@ playPause.addEventListener("click", () => {
 
 const worksSection = document.getElementById('works');
 
+if (worksSection) {
+
 window.addEventListener('scroll', () => {
 
   const worksTop = worksSection.getBoundingClientRect().top;
 
   if (worksTop < window.innerHeight / 2) {
 
-    if (worksTop < window.innerHeight / 2) {
+    if (
+      document.body.classList.contains("projects-page") &&
+      document.title.includes("Electronic")
+    ) {
 
-  if (document.body.classList.contains("projects-page") &&
-      document.title.includes("Electronic")) {
+      document.body.classList.add("electronic-section");
 
-    document.body.classList.add("electronic-section");
+    } else {
+
+      document.body.classList.add("dark-section");
+
+    }
 
   } else {
 
-    document.body.classList.add("dark-section");
+    document.body.classList.remove("dark-section");
+    document.body.classList.remove("electronic-section");
 
   }
 
-} else {
-
-  document.body.classList.remove("dark-section");
-  document.body.classList.remove("electronic-section");
+});
 
 }
-});
