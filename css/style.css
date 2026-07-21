@@ -172,6 +172,7 @@ body.dark-section {
 }
 body {
   transition: background-color 0.5s ease, color 0.5s ease;
+}
 
 
 
@@ -180,14 +181,12 @@ body.electronic-section {
   background-color: #2f2a25;   
   color: #f2e8bf;
 }
-
-.movie-page.dark-section {
-    background-color: #2f2a25;
+body.projects-page:not(.dark-section):not(.electronic-section),
+body.movie-page:not(.dark-section) {
+  background-color: #f2e8bf;
+  color: #111;
 }
 
-.projects-page.dark-section {
-    background-color: #2f2a25;
-}
 
 /* RESET PAGE COLOURS */
 
