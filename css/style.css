@@ -164,6 +164,7 @@ body {
 }
 
 
+/*DARK SECTION*/
 
 body.dark-section {
   background-color: #2f2a25;
@@ -177,6 +178,15 @@ body {
 }
 
 
+/* DARK SECTION - SYNTH ELECTRONIC PAGE*/
+body.electronic-section {
+  background-color: #15243b;   /* example dark blue */
+  color: #f2e8bf;
+}
+
+
+
+/*PLAYER BAR*/
 
 .player-bar {
   padding: 16px;
