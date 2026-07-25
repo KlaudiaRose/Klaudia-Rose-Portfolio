@@ -101,7 +101,7 @@ window.addEventListener('scroll', () => {
 
   const worksTop = worksSection.getBoundingClientRect().top;
 
-  if (worksTop < window.innerHeight / 2) {
+  if (worksTop < 200) {
 
     if (
       document.body.classList.contains("projects-page") &&
