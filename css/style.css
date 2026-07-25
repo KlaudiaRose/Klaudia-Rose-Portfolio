@@ -87,7 +87,7 @@ body {
 
 .nav a {
   text-decoration: none;
-  color: #111;
+  color: inherit;
 }
 
 .intro {
@@ -204,16 +204,6 @@ body.electronic-section {
     background-color: #15243b;
 }
 
-/*DARK SECTION*/
-
-body.dark-section {
-  background-color: #2f2a25;
-  color: #f2e8bf;
-}
-body {
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
-
 
 
 /* DARK SECTION - SYNTH ELECTRONIC PAGE*/
@@ -235,11 +225,15 @@ body.movie-page:not(.dark-section) {
   color: #111;
 }
 
-.movie-page {
+body.movie-page {
   background-color: #f2e8bf;
   color: #111;
 }
 
+body.movie-page.dark-section {
+  background-color: #2f2a25;
+  color: #f2e8bf;
+}
 
 
 
@@ -549,13 +543,10 @@ body.movie-page:not(.dark-section) {
   .page-title {
     font-size: 1.6rem;
   }
-}
-html, body {
-  overflow-x: hidden;
-}
+
 
 .site-wrapper {
-  max-width: 1100px;   /* controls how wide content can get */
+  max-width: 1000px;   /* controls how wide content can get */
   margin: 0 auto;      /* auto = big margins on desktop */
   padding: 0 24px;     /* small padding on mobile */
 }
@@ -605,14 +596,6 @@ body {
     gap: 16px;
   }
 
-}
-
-
-
-.site-wrapper {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
 }
 
 
