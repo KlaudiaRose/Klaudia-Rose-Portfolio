@@ -173,50 +173,7 @@ body {
 
 
 
-
-/*DARK SECTION*/
-
-body.projects-page.dark-section {
-  background-color: #2f2a25;
-  color: #f2e8bf;
-}
-body {
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
-.movie-page {
-  transition: background-color 0.5s ease, color 0.5s ease;
-}
-
-
-/* DARK SECTION - SYNTH ELECTRONIC PAGE*/
-body.electronic-section {
-  background-color: #2f2a25;   
-  color: #f2e8bf;
-}
-
-.movie-page.dark-section {
-    background-color: #2f2a25;
-}
-
-.Projects-page.dark-section {
-    background-color: #15243b;
-}
-
-
-
-/* DARK SECTION - SYNTH ELECTRONIC PAGE*/
-body.electronic-section {
-  background-color: #2f2a25;   
-  color: #f2e8bf;
-}
-body.projects-page:not(.dark-section):not(.electronic-section),
-body.movie-page:not(.dark-section) {
-  background-color: #f2e8bf;
-  color: #111;
-}
-
-
-/* RESET PAGE COLOURS */
+/* DEFAULT LIGHT MODE */
 
 body.projects-page,
 body.movie-page {
@@ -225,10 +182,19 @@ body.movie-page {
 }
 
 
-body.dark-section {
+/* DARK MODE */
+
+body.dark-section,
+body.electronic-section {
     background:#2f2a25;
     color:#f2e8bf;
 }
+
+
+body {
+    transition: background-color 0.5s ease, color 0.5s ease;
+}
+
 
 
 
