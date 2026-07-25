@@ -77,6 +77,7 @@ body {
 
 .nav {
   display: flex;
+  flex-direction: row;
   gap: 15px;
   align-items: flex-start;
 }
@@ -606,4 +607,27 @@ body {
 .work-subtitle {
   font-size:small;
   color:#a9978c;
+}
+
+
+/*NAV BAR GOES VERTICAL FOR PHONES*/
+  @media (max-width: 768px) {
+
+  .header {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 30px;
+  }
+
+  .nav {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .logo {
+    width: 120px;
+  }
+
 }
