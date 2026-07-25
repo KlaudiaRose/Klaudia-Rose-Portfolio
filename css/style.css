@@ -80,9 +80,6 @@ body {
   display: flex;
   gap: 15px;
   align-items: flex-start;
-
-  background-color: rgba(242, 232, 191, 0.60);
-  padding: 8px 18px;
 }
 
 
