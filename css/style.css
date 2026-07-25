@@ -78,7 +78,7 @@ body {
 .nav {
   display: flex;
   flex-direction: row;
-  gap: 50px;
+  gap: 15px;
   align-items: flex-start;
 }
 
@@ -218,16 +218,19 @@ body.movie-page:not(.dark-section) {
 
 /* RESET PAGE COLOURS */
 
-body.projects-page,
-body.movie-page {
-    background:#f2e8bf;
-    color:#111;
+.projects-page {
+  background-color: #f2e8bf;
+  color: #111;
 }
 
+body.movie-page {
+  background-color: #f2e8bf;
+  color: #111;
+}
 
-body.dark-section {
-    background:#2f2a25;
-    color:#f2e8bf;
+body.movie-page.dark-section {
+  background-color: #2f2a25;
+  color: #f2e8bf;
 }
 
 
