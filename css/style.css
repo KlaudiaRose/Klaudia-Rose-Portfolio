@@ -71,8 +71,8 @@ body {
 
 
 .nav a {
-  text-decoration-color: orange;
-  color: orange;
+  text-decoration: none;
+  color: inherit;
 }
 
 .intro {
@@ -480,6 +480,11 @@ body {
   .contact {
     padding: 40px 20px 80px;
   }
+
+  .nav a{
+    text-decoration-coolor: redorange;
+    color: redorange
+  }        
 
   .contact-layout {
     grid-template-columns: 1fr;
