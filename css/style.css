@@ -119,8 +119,6 @@ body {
 
     height: auto;
     aspect-ratio: 16 / 9;
-
-    transition: none;
 }
 
 .movie-page .video-wrapper iframe {
