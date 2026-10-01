@@ -71,8 +71,8 @@ body {
 
 
 .nav a {
-  text-decoration: none;
-  color: inherit;
+  text-decoration-color: orange;
+  color: orange;
 }
 
 .intro {
