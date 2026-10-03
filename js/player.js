@@ -1,15 +1,28 @@
+/* =========================================================
+   VIDEO PLAYER
+   ========================================================= */
+
 let currentVideo = null;
 
 const playerBar = document.getElementById("playerBar");
 const timeline = document.getElementById("timeline");
 const playPause = document.getElementById("playPause");
 
-document.querySelectorAll(".video-wrapper").forEach(wrapper => {
 
-  const video = wrapper.querySelector("video");
+/* ---------------------------------------------------------
+   LOCAL VIDEO FILES
+   Only run this code on wrappers that actually contain
+   a <video> element.
+   --------------------------------------------------------- */
+
+document.querySelectorAll(".video-wrapper video").forEach(video => {
+
+  const wrapper = video.closest(".video-wrapper");
   const src = wrapper.dataset.video;
 
-  // iPhone/Safari setup
+  if (!src) return;
+
+  /* Safari / iPhone setup */
   video.src = src;
   video.preload = "metadata";
   video.playsInline = true;
@@ -17,100 +30,176 @@ document.querySelectorAll(".video-wrapper").forEach(wrapper => {
 
   video.load();
 
-  // Force Safari to render first frame
-  video.play().then(() => {
-    video.pause();
-    video.currentTime = 0;
-  }).catch(() => {});
 
+  /* Force browser to render first frame */
+  video.addEventListener("loadedmetadata", () => {
+
+    video.currentTime = 0;
+
+    video.play()
+      .then(() => {
+        video.pause();
+        video.currentTime = 0;
+      })
+      .catch(() => {});
+
+  }, { once: true });
+
+
+  /* Click video */
   wrapper.addEventListener("click", () => {
 
-    // Pause previous video
+    /* Pause previous video */
     if (currentVideo && currentVideo !== video) {
       currentVideo.pause();
       currentVideo.currentTime = 0;
     }
 
+
     if (video.paused) {
 
-      // IMPORTANT:
-      // Unmute AFTER user interaction
+      /* Unmute only after user interaction */
       video.muted = false;
 
       video.play();
 
       currentVideo = video;
 
-      playerBar.style.display = "flex";
-      playPause.textContent = "⏸";
+      if (playerBar) {
+        playerBar.style.display = "flex";
+      }
+
+      if (playPause) {
+        playPause.textContent = "⏸";
+      }
 
     } else {
 
       video.pause();
-      playPause.textContent = "▶";
+
+      if (playPause) {
+        playPause.textContent = "▶";
+      }
+
     }
+
   });
 
+
+  /* Update timeline */
   video.addEventListener("timeupdate", () => {
 
+    if (!timeline || !video.duration) return;
+
     timeline.value =
-      (video.currentTime / video.duration) * 100 || 0;
+      (video.currentTime / video.duration) * 100;
 
   });
 
+
+  /* Video ended */
   video.addEventListener("ended", () => {
 
-    playPause.textContent = "▶";
+    if (playPause) {
+      playPause.textContent = "▶";
+    }
 
   });
 
 });
 
-timeline.addEventListener("input", () => {
 
-  if (!currentVideo) return;
+/* ---------------------------------------------------------
+   TIMELINE
+   --------------------------------------------------------- */
 
-  currentVideo.currentTime =
-    (timeline.value / 100) * currentVideo.duration;
+if (timeline) {
 
-});
+  timeline.addEventListener("input", () => {
 
-playPause.addEventListener("click", () => {
+    if (!currentVideo || !currentVideo.duration) return;
 
-  if (!currentVideo) return;
+    currentVideo.currentTime =
+      (timeline.value / 100) * currentVideo.duration;
 
-  if (currentVideo.paused) {
+  });
 
-    currentVideo.play();
-    playPause.textContent = "⏸";
+}
 
-  } else {
 
-    currentVideo.pause();
-    playPause.textContent = "▶";
+/* ---------------------------------------------------------
+   PLAY / PAUSE BUTTON
+   --------------------------------------------------------- */
 
-  }
+if (playPause) {
 
-});
+  playPause.addEventListener("click", () => {
 
-const worksSection = document.getElementById('works');
+    if (!currentVideo) return;
 
-if (worksSection) {
 
-  window.addEventListener('scroll', () => {
+    if (currentVideo.paused) {
 
-    const worksTop = worksSection.getBoundingClientRect().top;
-
-    if (worksTop < 200) {
-
-      document.body.classList.add('dark-section');
+      currentVideo.play();
+      playPause.textContent = "⏸";
 
     } else {
 
-      document.body.classList.remove('dark-section');
+      currentVideo.pause();
+      playPause.textContent = "▶";
 
     }
 
   });
+
+}
+
+
+/* =========================================================
+   DARK SECTION
+   ========================================================= */
+
+/*
+   The presence of #works determines whether the page
+   has a dark scrolling section.
+
+   Therefore:
+   - Portfolio → dark
+   - Natural Worlds → dark
+   - Electronic/Synth → dark
+   - Movies/Videos → dark
+   - Contact → stays light
+*/
+
+const worksSection = document.getElementById("works");
+
+
+if (worksSection) {
+
+  function updateDarkSection() {
+
+    const worksTop =
+      worksSection.getBoundingClientRect().top;
+
+
+    if (worksTop <= 150) {
+
+      document.body.classList.add("dark-section");
+
+    } else {
+
+      document.body.classList.remove("dark-section");
+
+    }
+
+  }
+
+
+  /* Check immediately */
+  updateDarkSection();
+
+
+  /* Check while scrolling */
+  window.addEventListener("scroll", updateDarkSection);
 
 }
